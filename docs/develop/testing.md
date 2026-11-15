@@ -23,8 +23,6 @@ change.
    directions.
 6. The comparison of Core's boards.
 
-Steps 2 to 4 take about 12 minutes.
-
 ## Integration tests
 
 The parts `system`, `ui` and `notifications` of Core's test suite, run as
@@ -91,7 +89,7 @@ source files the port changes that still differ for a Core board once the
 | Timer events from the RTC alarm | The emulator build takes them from SysTick or the wakeup timer |
 | Deep sleep (STOP mode) | The emulator build only waits for interrupts |
 | The display driver's wait for the FPGA | The emulated FPGA is ready at once |
-| Power chip, charging, accelerometer, compass | I2C and the sensors have no model |
+| Power chip, charging, accelerometer, compass The emulator has no model of these chips |
 | Microphone | No model |
 | The recovery firmware | Does not run in the emulator |
 
