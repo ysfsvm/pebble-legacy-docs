@@ -78,14 +78,9 @@ You need:
 
 - a Linux PC with a Bluetooth adapter that does Bluetooth Classic
 - BlueZ (`bluetoothctl`)
-- Python 3 with `libpebble2`
-- the tools repository, see {doc}`../develop/build`
+- Python 3.11 or newer
+- `plt` with its `watch` extra, see {doc}`../develop/tools`
 - a bundle (`.pbz`) of the port with firmware and resources
-
-:::{note}
-The scripts are being repackaged into one tool. The steps stay; the command
-lines below will change.
-:::
 
 1. Put the watch on the charger.
 2. Switch Bluetooth off on the phone, so that it does not connect to the
@@ -97,13 +92,13 @@ lines below will change.
    $ bluetoothctl devices
    ```
 
-4. Start the install from the tools repository:
+4. Start the install:
 
    ```console
-   $ python3 tools/recovery/classic_resume_install.py <address> <bundle.pbz>
+   $ python -m plt.recover install <address> <bundle.pbz>
    ```
 
-   The script pairs with the watch, opens a serial connection, writes the
+   It pairs with the watch, opens a serial connection, writes the
    firmware and then the resources, and tells the watch that the update is
    complete. With the port on PebbleOS 4.46 the transfer took about a
    minute and a half.
@@ -113,21 +108,40 @@ lines below will change.
 6. Switch Bluetooth on again on the phone.
 
 The recovery firmware keeps no pairing and cannot continue a transfer.
-When the connection drops, the script removes the pairing, pairs again and
-starts over, up to 40 times. `GAVE UP` means none of them got through.
-Check that the watch is on and shows the recovery screen, then run the
-script again. Do not hold buttons to help it along.
+When the connection drops, the command removes the pairing, pairs again and
+starts over, up to 40 times (`--windows N` changes that). Each time it
+first asks the watch how much of the update it holds, and continues from
+there if the watch answers. `GAVE UP` means none of them got through. Check that the watch
+is on and shows the recovery screen, then run the command again. Do not
+hold buttons to help it along.
 
-## Other scripts
+### With the image registry
 
-All in `tools/recovery`. They talk to the recovery firmware the same way.
+If you build with `plt`, `plt watch recover` does the same install with
+the image marked as the recovery image, or a named one:
 
-| Script | What it does |
+```console
+$ plt images role <image> recovery
+$ PLT_WATCH_BT=<address> plt watch recover [<image>]
+```
+
+It tries up to 30 times within 15 minutes, saves the full output in the
+logs directory and prints the last lines. After `DONE` it marks the image
+as the one the watch runs, but does not check the version the watch then
+reports. Check it with `plt watch status` once the phone is connected
+again.
+
+## Other commands
+
+They talk to the recovery firmware the same way, and take the same
+address.
+
+| Command | What it does |
 | --- | --- |
-| `classic_prf_alive.py` | Asks for the version every 10 seconds and logs how long the connection lasts |
-| `classic_prf_log.py` | Saves the recovery firmware's log of its last three starts |
-| `classic_get_coredump.py` | Saves the core dump the watch holds |
-| `coredump_parse.py` | Lists the tasks, registers and stacks of a core dump |
+| `python -m plt.recover alive <address> [--minutes M]` | Asks for the version every 10 seconds and logs how long the connection lasts. Default 5 minutes |
+| `python -m plt.recover log <address> <prefix>` | Saves the logs of the last three starts as `<prefix>-gen0.bin` to `<prefix>-gen2.bin` |
+| `python -m plt.recover coredump <address> <file> [--windows N]` | Saves the core dump the watch holds |
+| `python -m plt.coredump <file>` | Lists the threads, registers and stacks of a core dump |
 
 ## Back to the stock firmware
 
