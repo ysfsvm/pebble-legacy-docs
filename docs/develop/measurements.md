@@ -33,10 +33,18 @@ The key sequence:
 
 Time is measured in steps of 4 ms.
 
-:::{note}
-The parser and the commands around it are in the tools repository and are
-being repackaged into one tool.
-:::
+With `plt`, see {doc}`tools`:
+
+```console
+$ plt build <image> -D CONFIG_LEGACY_PERF_PROBE=y
+$ plt watch flash <image>
+$ plt bench run <image>
+$ plt bench report <image>
+```
+
+`plt bench run` sends the trigger, waits for the watch to come back and
+checks each run. `plt bench report` prints one line per run and the mean
+of the runs that counted.
 
 ## When a run counts
 
