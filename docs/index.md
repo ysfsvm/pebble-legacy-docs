@@ -74,7 +74,7 @@ A Pebble Time is sealed. It has no debug port to rescue it with.
 The port replaces only the watch's normal firmware. The bootloader, the
 recovery firmware and the factory data stay Pebble's. If a build does not
 start, the watch falls back to the recovery firmware, and getting out of it
-needs a Linux PC with Bluetooth Classic. A phone cannot do it.
+needs a Linux PC with Bluetooth Classic and the recovery tool.
 {doc}`use/recover` has the steps.
 
 There is no install guide yet. {doc}`use/faq` has the short answers.

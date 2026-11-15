@@ -6,8 +6,8 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 ## Recovery
 
 - **A build that does not start leaves the watch in the recovery
-  firmware.** A phone cannot get it out. Have a Linux PC with Bluetooth
-  Classic ready before you install anything. See {doc}`recover`.
+  firmware.** Core's phone app cannot get it out. Have a Linux PC with
+  Bluetooth Classic ready before you install anything. See {doc}`recover`.
 - **Recovery was not run with the port on PebbleOS 4.47.** It was run three
   times with the port on PebbleOS 4.46. Going back to the stock firmware
   was never run.

@@ -6,7 +6,8 @@ Less safe than staying on the stock firmware.
 
 The port never writes the bootloader, the recovery firmware or the factory
 data. A build that does not start falls back to Pebble's recovery firmware.
-Getting out of it needs a Linux PC with Bluetooth Classic, not a phone.
+Getting out of it needs a Linux PC with Bluetooth Classic and the recovery
+tool.
 
 The port has run on one Pebble Time. The way back from the recovery
 firmware was run three times with the port on PebbleOS 4.46, and not yet
