@@ -11,9 +11,6 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 - **Recovery was not run with the port on PebbleOS 4.47.** It was run three
   times with the port on PebbleOS 4.46. Going back to the stock firmware
   was never run.
-- **A factory reset does not forget a phone paired under the stock
-  firmware.** The port imports that pairing again at the next start. Delete
-  it on the watch in Settings > Bluetooth.
 
 ## Bluetooth
 
@@ -21,7 +18,7 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 - **Transfers are slow.** About 13 KiB/s. A firmware update takes a few
   minutes.
 - **The phone app does not offer firmware updates for the port.** A new
-  build is sideloaded.
+  build is sideloaded. See {doc}`update`.
 
 ## Display
 

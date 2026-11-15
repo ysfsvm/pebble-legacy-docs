@@ -45,8 +45,7 @@ Not measured.
 While idle the watch spends 94 to 96 % of an hour in deep sleep, on one
 watch with PebbleOS 4.47. The current in deep sleep was not measured.
 
-Charging works, with the stock charger settings. The watch shows the
-charge in steps of 1 %.
+Charging works, with the stock charger settings.
 
 ## Why does pairing ask for a code?
 
