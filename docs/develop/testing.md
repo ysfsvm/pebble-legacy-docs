@@ -6,22 +6,21 @@ A Pebble Time cannot be opened to rescue it. So every build runs in the
 emulator first, and what the emulator cannot run is known before the
 install.
 
-:::{note}
-The scripts named here are in the tools repository, see {doc}`build`. They
-are being repackaged into one tool. The checks stay; the command lines will
-change.
-:::
+The commands are those of `plt`, see {doc}`tools`.
 
 ## Before a build goes on a watch
 
-1. A release build from a clean checkout of one commit.
+1. A release build from a clean checkout of one commit: `plt build`.
 2. Two emulator builds of the same commit: one with timer events from
    SysTick, one with the RTC wakeup timer (`CONFIG_TIMER_STM32_RTC_WUT=y`).
 3. Core's integration tests on both emulator builds.
 4. The update test.
 5. After a move to a new PebbleOS release: the update test in both
    directions.
-6. The comparison of Core's boards.
+6. The comparison of Core's boards: `plt gate --objects`.
+
+`plt emu test` runs steps 2 to 4 and records the results with the image.
+`plt watch flash` refuses an image without them.
 
 ## Integration tests
 
@@ -31,19 +30,31 @@ a watch. A stand-in plays the Bluetooth controller.
 
 Pass: `14 passed` on each emulator build.
 
-`tools/emu/itest.sh` starts the stand-in and the tests in one go.
+```console
+$ plt emu test <image>
+$ plt emu try [--wut]
+```
+
+`plt emu test` builds the image's commit for the emulator, both ways, and
+runs the tests on each. `plt emu try` runs them on the checkout as it is,
+uncommitted changes included, and records nothing.
 
 ## Update test
 
-`tools/emu/emu_fw_update.py` starts an emulator build and sends it a
-bundle the way the phone app does: firmware and system resources. The
-firmware restarts and the bootloader installs the update.
+The test starts an emulator build and sends it a bundle the way the phone
+app does: firmware and system resources. The firmware restarts and the
+bootloader installs the update.
+
+`plt emu test` ends with this test, on the wakeup timer build, with the
+build's own bundle. To repeat only this test:
 
 ```console
-# python3 emu_fw_update.py <build dir> <qemu> <bundle.pbz> <output dir>
+$ plt emu test <image> --update-only
 ```
 
-Run it in the firmware tree, inside the build container.
+An update between two versions has no `plt` command. The
+[tools manual](https://github.com/ysfsvm/pebble-legacy-tools#plt-emu-test)
+shows how to run it by hand.
 
 Pass: after the restart the firmware reports the version of the bundle.
 A transfer that finished is not a pass.
@@ -58,20 +69,22 @@ Core's boards are built twice, from Core's release and from the port, and
 compared object by object.
 
 ```console
-# bash core_compare.sh <Core tree> <port tree> <output dir> \
-    asterix obelix@pvt getafix@dvt2
+$ plt gate --objects
 ```
 
-Run it inside the build container. Pass: no object is added, removed or
-changed for any board.
+It needs an unchanged checkout of Core's release, by default `base` next to
+the port's checkout (`PLT_BASE_WORKTREE`). It takes about 10 minutes.
+Pass: `0 differing objects` for each board.
 
 Objects are compared without debug information. Line numbers in log and
 assert calls and the version string are masked, so a line that only moved
 does not count. `version.c` is skipped.
 
-`tools/gate/gate_check.py` is the quick check before that. It lists the
+`plt gate` without `--objects` is the quick check before that. It lists the
 source files the port changes that still differ for a Core board once the
-`CONFIG_` conditions are resolved.
+`CONFIG_` conditions are resolved. It reads the board configurations that
+`--objects` leaves behind; before the first such run it only counts the
+changed files.
 
 ## What the emulator covers
 
