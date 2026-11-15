@@ -77,7 +77,8 @@ start, the watch falls back to the recovery firmware, and getting out of it
 needs a Linux PC with Bluetooth Classic and the recovery tool.
 {doc}`use/recover` has the steps.
 
-There is no install guide yet. {doc}`use/faq` has the short answers.
+There is no guide for the first install yet. {doc}`use/update` covers a
+watch that already runs the port. {doc}`use/faq` has the short answers.
 
 ## Source
 
@@ -97,6 +98,8 @@ Most of the driver code is his.
 :hidden:
 
 use/watches
+use/app
+use/update
 use/recover
 use/known-issues
 use/faq
