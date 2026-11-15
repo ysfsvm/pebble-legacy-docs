@@ -28,7 +28,7 @@ Assisted-by: LLM
 Signed-off-by: Your Name <you@example.com>
 ```
 
-Files that came from Brian Silvestri's port keep his copyright line.
+Keep the copyright lines already in a file.
 
 ## Shared code stays Core's
 
@@ -36,8 +36,8 @@ Core's own boards must build to the same objects with and without the
 port.
 
 - A change to code that Core's boards also build goes behind an option in
-  `Kconfig.legacy`. The options there are open only to boards that select
-  `LEGACY_WATCH`.
+  `Kconfig.legacy`. Without `LEGACY_WATCH`, which only the port's boards
+  select, every option there keeps Core's behaviour.
 - A new driver or board file needs no option. Core's boards do not build
   it.
 - Before a change is merged, three of Core's boards are built with and
