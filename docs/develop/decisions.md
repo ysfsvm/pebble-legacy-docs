@@ -38,7 +38,7 @@ Cost: no LE privacy. The address on the air is the real one.
 
 The recovery firmware reads the watch's clock (RTC) and expects the stock
 configuration: 256 steps a second. With another configuration it resets in
-a loop. An early build of the port did this to a watch.
+a loop, and the watch is left without a working recovery.
 
 So the port's timer has 256 steps a second, 3.9 ms each.
 
