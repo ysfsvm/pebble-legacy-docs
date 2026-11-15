@@ -16,12 +16,13 @@ arguments.
 
 ```console
 $ git clone https://github.com/ysfsvm/PebbleOS-legacy.git
-$ git clone https://github.com/ysfsvm/PebbleOS-legacy-firmware.git
+$ git clone https://github.com/ysfsvm/pebble-legacy-tools.git
 $ cd PebbleOS-legacy
 $ git submodule update --init --depth 1 --jobs 8
 ```
 
-The second repository has the tools used on this page.
+The second repository has the QEMU patches and the Bluetooth controller
+stand-in used on this page. {doc}`tools` describes its tool, `plt`.
 
 Clone `PebbleOS-legacy` with its full history. The emulator tests take the
 watch's original bootloader from an old commit, and a shallow clone does
@@ -79,7 +80,7 @@ model. Never install this image on a watch.
 
 ## Build QEMU
 
-The emulator is Core's QEMU with four patches from the tools repository.
+The emulator is Core's QEMU with four patches from `pebble-legacy-tools`.
 The build takes about three minutes.
 
 ```console
@@ -87,7 +88,7 @@ The build takes about three minutes.
 # git clone --filter=blob:none https://github.com/coredevices/qemu.git
 # cd qemu
 # git checkout 8a0a7c6
-# git am ../PebbleOS-legacy-firmware/tools/qemu/000*.patch
+# git am ../pebble-legacy-tools/qemu/000*.patch
 # mkdir ../qemu-build && cd ../qemu-build
 # ../qemu/configure --target-list=arm-softmmu --disable-sdl --disable-tools \
     --disable-docs --disable-guest-agent --disable-werror --disable-gtk \
@@ -107,11 +108,12 @@ The build takes about three minutes.
 
 ## Run the tests
 
-The firmware expects a Bluetooth controller. `fake_cc2564.py` stands in for
-it.
+The firmware expects a Bluetooth controller. The module `plt.fake_cc2564`
+stands in for it. The tools package is not installed in the container;
+`PYTHONPATH` makes the module runnable from the clone.
 
 ```console
-# python3 ../PebbleOS-legacy-firmware/tools/emu/fake_cc2564.py 5556 /tmp/fake_cc2564.log &
+# PYTHONPATH=../pebble-legacy-tools/src python3 -m plt.fake_cc2564 5556 /tmp/fake_cc2564.log &
 # export PEBBLE_QEMU_BIN=$PWD/../qemu-build/qemu-system-arm
 # pbl -b build-emu itest system ui notifications --bt-hci tcp:127.0.0.1:5556
 ```
