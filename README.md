@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/_static/images/logo-dark.svg">
+    <img src="docs/_static/images/logo-light.svg" alt="PebbleOS legacy" width="320">
+  </picture>
+</p>
+
 # pebble-legacy-docs
 
 Documentation site of the PebbleOS port to the legacy Pebble watches.
