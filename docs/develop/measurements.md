@@ -59,18 +59,18 @@ when one change separates them.
 
 ## A frame today
 
-Mean per frame over three runs that counted.
+Mean per frame over three runs that counted, on the measurement build
+with both display options below on.
 
 | Part | Time |
 | --- | --- |
-| A system app draws its window | 34.7 ms |
+| The app on screen draws its window | 34.7 ms |
 | The compositor | 1.6 ms |
 | Transfer to the display | 23.9 ms |
 | of it, waiting for the FPGA between lines | 13.2 ms |
 | Waiting for the display before the frame | 0.9 ms |
 
-The animations are made for 33 ms a frame. Drawing takes longer, so they
-lose frames.
+The animations are made for 33 ms a frame. Drawing alone takes longer.
 
 5.0 % of the profile's samples are in interrupt handlers.
 
@@ -81,8 +81,8 @@ key landed on another screen, so only the shares are used.
 
 | Code | Share of the drawing |
 | --- | --- |
-| 64-bit divisions in `integer_sqrt`, used for round line caps | About 8 % |
-| Heap allocation in the launcher | 8 to 15 % |
+| 64-bit divisions in `integer_sqrt`, used for stroked lines and their round caps | About 8 % |
+| Heap allocation (`pbl_heap_alloc`) | About 8 % |
 
 Both are PebbleOS code that Core's watches run too.
 
