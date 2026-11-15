@@ -57,8 +57,8 @@ back after being switched off.
 
 The system resources fill their flash region. Only 136 color emoji fit.
 
-The rest are in a pack file of 360 KB on the watch's filesystem. Every
-firmware bundle carries the pack, and the phone app installs it after an
+The rest are in a pack file of 360 KB on the watch's filesystem. The
+Pebble Time and Time Steel bundles carry the pack, and the phone app installs it after an
 update. Without the pack the watch draws the 136.
 
 ## Factory reset keeps the firmware
