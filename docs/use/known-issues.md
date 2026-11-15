@@ -57,6 +57,3 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 - **The clock can read one step back.** The timer driver then keeps the
   earlier value and logs a warning with the RTC's registers. The cause is
   not known.
-- **Debug lines are missing from the watch's log.** The log in flash keeps
-  info and above. A diagnostic build needs
-  `CONFIG_LOG_BACKEND_FLASH_LEVEL_DEBUG=y`.
