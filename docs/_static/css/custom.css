@@ -312,9 +312,9 @@ html.dark {
 
 /* The logo carries a second line ("legacy"): a taller bar and a larger mark. */
 :root {
-  --sy-s-navbar-height: 76px;
+  --sy-s-navbar-height: 64px;
 }
 
 .sy-head-brand img {
-  height: 50px;
+  height: 44px;
 }
