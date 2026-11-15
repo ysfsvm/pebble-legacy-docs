@@ -5,7 +5,7 @@ Install a new build on a watch that already runs this firmware.
 You need:
 
 - the phone app of this project, see {doc}`app`
-- a bundle (`.pbz`) for your watch on the phone
+- a bundle (`.pbz`) for your watch on the phone, see {doc}`download`
 
 ## Steps
 

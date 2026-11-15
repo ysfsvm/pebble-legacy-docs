@@ -98,6 +98,7 @@ Most of the driver code is his.
 :hidden:
 
 use/watches
+use/download
 use/app
 use/update
 use/recover

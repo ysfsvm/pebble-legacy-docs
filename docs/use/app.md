@@ -18,7 +18,7 @@ Only the Android app was built and used.
 
 ## Get it
 
-Build it:
+Download the APK of a release, see {doc}`download`. Or build it:
 
 ```console
 $ git clone --recurse-submodules https://github.com/ysfsvm/mobileapp-legacy.git
