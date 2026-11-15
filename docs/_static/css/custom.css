@@ -309,3 +309,12 @@ html.dark {
 .pbl-playground select[hidden] {
   display: none;
 }
+
+/* The logo carries a second line ("legacy"): a taller bar and a larger mark. */
+:root {
+  --sy-s-navbar-height: 76px;
+}
+
+.sy-head-brand img {
+  height: 50px;
+}
