@@ -31,6 +31,20 @@ not make it and do not support it.
 Each feature of the watch, and whether it was checked on one.
 :::
 
+:::{grid-item-card} Recover
+:link: use/recover
+:link-type: doc
+
+What to do when the watch shows the recovery screen.
+:::
+
+:::{grid-item-card} Known issues
+:link: use/known-issues
+:link-type: doc
+
+What is broken or rough today.
+:::
+
 :::{grid-item-card} Build and emulator
 :link: develop/build
 :link-type: doc
@@ -61,8 +75,9 @@ The port replaces only the watch's normal firmware. The bootloader, the
 recovery firmware and the factory data stay Pebble's. If a build does not
 start, the watch falls back to the recovery firmware, and getting out of it
 needs a Linux PC with Bluetooth Classic. A phone cannot do it.
+{doc}`use/recover` has the steps.
 
-There is no install guide yet.
+There is no install guide yet. {doc}`use/faq` has the short answers.
 
 ## Source
 
@@ -82,6 +97,9 @@ Most of the driver code is his.
 :hidden:
 
 use/watches
+use/recover
+use/known-issues
+use/faq
 ```
 
 ```{toctree}
@@ -92,4 +110,8 @@ use/watches
 develop/build
 develop/port
 develop/decisions
+develop/hardware
+develop/testing
+develop/measurements
+develop/contributing
 ```
