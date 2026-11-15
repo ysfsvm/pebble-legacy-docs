@@ -86,7 +86,7 @@ watch that already runs the port. {doc}`use/faq` has the short answers.
 | --- | --- |
 | [PebbleOS-legacy](https://github.com/ysfsvm/PebbleOS-legacy) | The firmware |
 | [mobileapp-legacy](https://github.com/ysfsvm/mobileapp-legacy) | Core's phone app, with the changes these watches need |
-| [PebbleOS-legacy-firmware](https://github.com/ysfsvm/PebbleOS-legacy-firmware) | Tools for building, testing and measuring |
+| [pebble-legacy-tools](https://github.com/ysfsvm/pebble-legacy-tools) | `plt`, the tool for building, testing, installing and measuring |
 
 The port started from Brian Silvestri's
 [PebbleOS-legacy-watches](https://github.com/bjsilvest/PebbleOS-legacy-watches).
@@ -115,6 +115,7 @@ develop/port
 develop/decisions
 develop/hardware
 develop/testing
+develop/tools
 develop/measurements
 develop/contributing
 ```
