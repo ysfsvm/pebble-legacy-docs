@@ -87,6 +87,12 @@ the port and comparing the objects. They must be identical.
 
 ## What is not done yet
 
-The devices are described in C tables in the board files. PebbleOS 4.47
-describes its own boards in a devicetree. Only the flash partitions of the
-Pebble Time are there so far.
+The port is not in the shape PebbleOS wants for its own boards.
+
+| Today | Where it has to go |
+| --- | --- |
+| The devices are described in C tables in the board files. Only the flash partitions are in the devicetree | Every device in the devicetree, with bindings that follow Linux's for the STM32F4 |
+| The drivers call ST's Standard Peripheral Library | No vendor library. Drivers write the registers themselves |
+| Some drivers reach into each other | Each driver implements one of PebbleOS' driver classes |
+
+Until then the port lives in this fork.
