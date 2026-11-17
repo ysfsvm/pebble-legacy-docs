@@ -1,6 +1,6 @@
 # Sphinx configuration, kept close to PebbleOS' own documentation.
 
-project = "PebbleOS for legacy watches"
+project = "PebbleOS for the Pebble Time family"
 copyright = "2026, the PebbleOS legacy port contributors"
 author = "the PebbleOS legacy port contributors"
 
@@ -19,7 +19,7 @@ nitpicky = True
 html_theme = "shibuya"
 templates_path = ["_templates"]
 html_static_path = ["_static"]
-html_title = "PebbleOS for legacy watches"
+html_title = "PebbleOS for the Pebble Time family"
 html_favicon = "_static/images/favicon.svg"
 html_css_files = ["css/custom.css"]
 html_theme_options = {

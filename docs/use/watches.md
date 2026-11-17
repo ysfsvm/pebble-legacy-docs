@@ -9,7 +9,8 @@
 The Time Steel is the same board with another battery. The Time Round
 shares the electronics but has its own display path, which has never run.
 
-The Pebble 2 and the original Pebble are not part of this port.
+The original Pebble, the Pebble Steel and the Pebble 2 are not part of
+this port. [PebbleOS-legacy-watches](https://github.com/bjsilvest/PebbleOS-legacy-watches) is a separate port for them.
 
 ## Pebble Time
 

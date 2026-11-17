@@ -7,7 +7,7 @@
 
 # pebble-legacy-docs
 
-Documentation site of the PebbleOS port to the legacy Pebble watches.
+Documentation site of the PebbleOS port to the Pebble Time, Time Steel and Time Round.
 
 Build it:
 

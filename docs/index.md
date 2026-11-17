@@ -1,8 +1,12 @@
-# PebbleOS for legacy watches
+# PebbleOS for the Pebble Time family
 
 [PebbleOS](https://github.com/coredevices/PebbleOS) is the open firmware of
-today's Pebble watches. This project runs it on the Pebble Time from 2015,
-which Core Devices' firmware does not support.
+today's Pebble watches. This project runs it on the Pebble Time family
+from 2015: the Pebble Time, Time Steel and Time Round, which Core Devices'
+firmware does not support.
+
+The original Pebble, the Pebble Steel and the Pebble 2 are not covered.
+[PebbleOS-legacy-watches](https://github.com/bjsilvest/PebbleOS-legacy-watches) is a separate port for them.
 
 :::{important}
 This is a community port. Core Devices, Google and Pebble Technology did

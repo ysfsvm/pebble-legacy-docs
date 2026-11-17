@@ -61,7 +61,8 @@ The Time Steel is the same board with another battery. The Time Round has
 its own display code, which has never run. Do not install on a watch you
 cannot afford to lose.
 
-The Pebble 2 and the original Pebble are not part of this port.
+The original Pebble, the Pebble Steel and the Pebble 2 are not part of
+this port. [PebbleOS-legacy-watches](https://github.com/bjsilvest/PebbleOS-legacy-watches) is a separate port for them.
 
 ## What is broken?
 
