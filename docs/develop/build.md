@@ -59,7 +59,7 @@ firmware, the system resources and the emoji pack.
 | Board | Watch | State |
 | --- | --- | --- |
 | `snowy@dvt` | Pebble Time | Runs on a watch |
-| `snowy@s3` | Pebble Time Steel | Builds. Never run on a watch |
+| `snowy@s3` | Pebble Time Steel | Runs on a user's watch. Not tested here |
 | `spalding` | Pebble Time Round | Builds. Never run on a watch |
 
 :::{warning}

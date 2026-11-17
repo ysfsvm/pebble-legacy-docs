@@ -18,7 +18,7 @@ $ sha256sum -c SHA256SUMS_snowy_dvt.txt --ignore-missing
 | Watch | File | State |
 | --- | --- | --- |
 | Pebble Time | `normal_snowy_dvt_<version>.pbz` | Runs on a watch |
-| Pebble Time Steel | `normal_snowy_s3_<version>.pbz` | Builds. Never run on a watch |
+| Pebble Time Steel | `normal_snowy_s3_<version>.pbz` | Runs on a user's watch. Not tested here |
 | Pebble Time Round | `normal_spalding_<version>.pbz` | Builds. Never run on a watch |
 
 The Pebble Time and Time Steel files carry the emoji pack. The Time Round

@@ -18,7 +18,7 @@ not make it and do not support it.
 | Watch | State |
 | --- | --- |
 | Pebble Time | Runs on a watch |
-| Pebble Time Steel | Builds. Never run on a watch |
+| Pebble Time Steel | Runs on a user's watch. Not tested here |
 | Pebble Time Round | Builds. Never run on a watch |
 
 {doc}`use/watches` has the details.

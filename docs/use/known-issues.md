@@ -17,8 +17,8 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 - **iPhone was not tried.**
 - **Transfers are slow.** About 13 KiB/s. A firmware update takes a few
   minutes.
-- **The phone app does not offer firmware updates for the port.** A new
-  build is sideloaded. See {doc}`update`.
+- **Core's app from the store does not offer updates of the port.** The
+  app of this project does, from version legacy-2. See {doc}`update`.
 
 ## Display
 
@@ -42,7 +42,9 @@ PebbleOS 4.47. What does not work at all is on {doc}`watches`.
 
 ## Time Steel and Time Round
 
-- **Neither has run on a watch.** The Time Round's display code has never
+- **The Time Steel was not tested here.** Its build runs on a user's
+  watch; nothing else on this site was checked on one.
+- **The Time Round has never run on a watch.** Its display code has never
   run at all. Do not install on a watch you cannot afford to lose.
 
 ## For developers

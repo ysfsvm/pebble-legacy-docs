@@ -3,7 +3,7 @@
 | Watch | Board | State |
 | --- | --- | --- |
 | Pebble Time | `snowy@dvt` | Runs on one retail watch |
-| Pebble Time Steel | `snowy@s3` | Builds. Never run on a watch |
+| Pebble Time Steel | `snowy@s3` | Runs on a user's watch. Not tested here |
 | Pebble Time Round | `spalding` | Builds. Never run on a watch |
 
 The Time Steel is the same board with another battery. The Time Round

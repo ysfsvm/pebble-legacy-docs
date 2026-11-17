@@ -55,7 +55,8 @@ watch shows six digits and you type them on the phone. See
 
 ## Does it run on a Time Steel or a Time Round?
 
-Both build. Neither has run on a watch.
+Both build. The Time Steel build runs on a user's watch; it was not tested
+here. The Time Round has never run on a watch.
 
 The Time Steel is the same board with another battery. The Time Round has
 its own display code, which has never run. Do not install on a watch you
