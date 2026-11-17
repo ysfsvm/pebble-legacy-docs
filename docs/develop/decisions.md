@@ -4,8 +4,8 @@ What the port does differently from Pebble's stock firmware, and why.
 
 ## Pebble's bootloader and recovery firmware stay
 
-The watch has no debug port. The recovery firmware is the only way back
-when a build does not start.
+The watch's debug pads are inside the sealed case. Without opening it, the
+recovery firmware is the only way back when a build does not start.
 
 Cost: the recovery firmware is from 2015 and talks Bluetooth Classic.
 Core's phone app cannot drive it. Installing from it needs a PC.

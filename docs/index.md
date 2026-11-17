@@ -73,7 +73,8 @@ What differs from the stock firmware, and why.
 
 ## Before you install anything
 
-A Pebble Time is sealed. It has no debug port to rescue it with.
+A Pebble Time is sealed. Its debug pads are inside the case and cannot be
+reached without opening the watch.
 
 The port replaces only the watch's normal firmware. The bootloader, the
 recovery firmware and the factory data stay Pebble's. If a build does not
