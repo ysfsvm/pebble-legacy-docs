@@ -18,6 +18,7 @@ to look at it. The only way out is a new install.
 | --- | --- |
 | Port to recovery firmware and back, from a PC | Run three times on one Pebble Time, with the port on PebbleOS 4.46 |
 | The same with the port on PebbleOS 4.47 | Not run |
+| Stock firmware (4.4.3) to the port on PebbleOS 4.47, through the recovery firmware, from a PC | Run once on a Pebble Time, as reported by a user, from Windows with WSL2 |
 | Recovery firmware to a stock firmware | Never run |
 | Any of this on a Time Steel or Time Round | Never run |
 
@@ -114,6 +115,30 @@ first asks the watch how much of the update it holds, and continues from
 there if the watch answers. `GAVE UP` means none of them got through. Check that the watch
 is on and shows the recovery screen, then run the command again. Do not
 hold buttons to help it along.
+
+### Every connection fails right after pairing
+
+The PC's kernel can keep a link key from an earlier pairing with the watch,
+for example one made while the watch ran its normal firmware. The recovery
+firmware does not have that key. The pairing then reports `Already Paired`
+and each attempt ends with `OSError: [Errno 52] Invalid exchange`.
+`bluetoothctl remove` does not drop that key. This does:
+
+```console
+$ sudo btmgmt unpair <address>
+```
+
+`plt` 0.2.2 and newer tries it after each failed attempt, which only has an
+effect when it runs as root.
+
+### From Windows
+
+The install was reported to work from WSL2 with a USB Bluetooth adapter
+passed through by `usbipd-win` and `bluetoothd` started by hand.
+
+- WSL stops the distribution, and `bluetoothd` with it, when its last
+  session ends. Do the whole install in one session.
+- With USBPcap installed, `usbipd bind` needs `--force`.
 
 ### With the image registry
 
